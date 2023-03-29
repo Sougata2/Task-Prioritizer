@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+    <title>Task Prioritizer</title>
+  </head>
+
+  <body onload="tableInit()">
+    <div class="header">
+      <h2>Task Prioritizer</h2>
+    </div>
+
+    <div class="w3-card-4 task_form">
+      <form name="taskForm">
+        <div class="W3-container input_items">
+          <div class="w3-row-padding">
+            <div class="w3-col" style="width: 33%">
+              <input
+                class="w3-input w3-border"
+                type="text"
+                placeholder="Enter Task Name"
+                id="taskName"
+              />
+            </div>
+
+            <div class="w3-col" style="width: 25%">
+              <input class="w3-input w3-border" type="date" id="startDate" />
+            </div>
+
+            <div class="w3-col" style="width: 25%">
+              <input class="w3-input w3-border" type="date" id="endDate" />
+            </div>
+
+            <div class="w3-col" style="width: auto">
+              <button
+                class="w3-button w3-border w3-black"
+                type="button"
+                id="addButton"
+                onclick="addTask(); this.form.reset();"
+              >
+                Add Task
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!--Output-->
+
+    <div class="header">
+      <h3>Task Table</h3>
+    </div>
+
+    <div class="w3-card-4 output_table">
+      <div class="W3-container ouput_items">
+        <table id="taskTable">
+          <thead>
+            <tr>
+              <th>Task Name</th>
+              <th
+                class="pointer"
+                style="text-decoration: underline; cursor: pointer"
+                onclick="sortTable(1);"
+              >
+                Start Date
+              </th>
+              <th
+                class="pointer"
+                style="text-decoration: underline; cursor: pointer"
+                onclick="sortTable(2);"
+              >
+                End Date
+              </th>
+              <th
+                class="pointer"
+                style="text-decoration: underline; cursor: pointer"
+                onclick="sortTable(3);"
+              >
+                Days Remaining
+              </th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <div class="w3-center">
+          <button
+            class="w3-button w3-border"
+            type="button"
+            id="clearButton"
+            onclick="clearTable()"
+          >
+            Clear Table
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
